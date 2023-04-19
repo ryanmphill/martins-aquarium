@@ -52,12 +52,12 @@ body {
     margin-right: auto;
 }
 
-.fishy__articles {
+.fishy__cardsection {
     margin-top: 0.5em;
     /* border: 2px dotted firebrick; */
 }
 
-.fishy__article {
+.fishy__card {
     margin-bottom: 0.5em;
     background-color: lightcyan;
     width: 100%;
@@ -100,7 +100,7 @@ body {
     /* border: 2px dotted gray; */
 }
 
-.location__article {
+.location__card {
     background-color: lightcyan;
     border-radius: 8px;
     box-shadow: -1px 1px 6px rgb(129, 128, 128);
@@ -171,14 +171,14 @@ body {
         width: 70%;
     }
 
-    .fishy__articles {
+    .fishy__cardsection {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
         row-gap: 1.75em;
     }
 
-    .fishy__article {
+    .fishy__card {
         width: 45%;
         margin: 0;
     }
@@ -202,7 +202,7 @@ body {
 
 @media screen and (min-width: 1088px) {
 
-    .location__article {
+    .location__card {
         display: flex;
         column-gap: 2em;
     }
