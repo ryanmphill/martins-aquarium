@@ -67,6 +67,10 @@ body {
     box-shadow: -1px 1px 6px rgb(129, 128, 128);
 }
 
+.fishy__species {
+    color: rgb(32, 32, 32, 0.75);
+}
+
 .fishy__info {
     text-align: left;
 }
@@ -119,6 +123,10 @@ body {
     padding-bottom: 0.5em;
 }
 
+.location__header {
+    color: rgb(32, 32, 32, 0.75);
+}
+
 .location__quotes {
     text-align: left;
     background-color: azure;
@@ -130,6 +138,10 @@ body {
     padding-right: 0.5em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+}
+
+.location__quotehead {
+    color: rgb(32, 32, 32, 0.75);
 }
 
 .location__quotelist {

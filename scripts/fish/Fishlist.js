@@ -12,7 +12,8 @@ export const FishList = () => {
     const lastFish = nonHolyFish() 
 
     // Start building a string filled with HTML syntax
-    let htmlString = `<h2 class="body__header fishy__header">Fish Details</h2>
+    let htmlString = `<div class ="fishy__container">
+    <h2 class="body__header fishy__header">Fish Details</h2>
     <div class="fishy__cardsection">`
 
     // display the fish with length divisible by 3
@@ -29,20 +30,29 @@ export const FishList = () => {
       </section>
 `
     }
-    // Display fish with length divisible by 5, but filter out any divisible by both 5 and 3
-    for (const fish of secondFish) {
-      if (firstFish.includes(fish) === false) {
-        htmlString += `<section class="fishy__card">
-        <img src="${fish.image}" alt="bellus anglefish" class="fishy__img">
-        <h3 class="fishy__species">${fish.species}</h3>
-        <p class="fishy__info">Length: ${fish.size} in.</p>
-        <p class="fishy__info">Harvested from: ${fish.origin}</p>
-        <p class="fishy__info">Diet: ${fish.food}</p>
-        <p class="fishy__info">Name: ${fish.name}</p>
-      </section>
-`
+    // Filter out fish that are divisible by both 5 and 3 to avoid duplicates
+    for (let i = 0; i < secondFish.length; i++) {
+      for (let item of firstFish) {
+        if (item.name === secondFish[i].name) {
+          secondFish.splice(i, 1)
+        }
       }
     }
+    // Display fish divisible by 5, but not if they are also divisible by 3
+    for (const fish of secondFish) {
+
+      
+      htmlString += `<section class="fishy__card">
+      <img src="${fish.image}" alt="bellus anglefish" class="fishy__img">
+      <h3 class="fishy__species">${fish.species}</h3>
+      <p class="fishy__info">Length: ${fish.size} in.</p>
+      <p class="fishy__info">Harvested from: ${fish.origin}</p>
+      <p class="fishy__info">Diet: ${fish.food}</p>
+      <p class="fishy__info">Name: ${fish.name}</p>
+    </section>
+`
+    }
+    
     // Display the rest of the fish
     for (const fish of lastFish) {
 
@@ -56,9 +66,10 @@ export const FishList = () => {
       <p class="fishy__info">Name: ${fish.name}</p>
     </section>
 `
-  }
+    }
 
-    htmlString += `</div>`
+    htmlString += `  </div>
+    </div>`
 
     return htmlString
 }
